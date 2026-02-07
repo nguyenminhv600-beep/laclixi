@@ -1,0 +1,3116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <title>🧧 Lắc Lì Xì Tết 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red-primary: #D4202F;
+            --red-dark: #8B0000;
+            --gold: #FFD700;
+            --gold-light: #FFF4CC;
+            --cream: #FFF8DC;
+        }
+
+        body {
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #D4202F;
+            background: linear-gradient(to bottom, #D4202F 0%, #8B0000 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fireworks background */
+        .fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .spark {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: sparkle 3s infinite;
+            opacity: 0;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { 
+                opacity: 0; 
+                transform: scale(0); 
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1); 
+            }
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            15%, 85% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+        }
+
+        /* Lanterns decoration */
+        .lanterns {
+            position: fixed;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            pointer-events: none;
+            z-index: 2;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 20px;
+        }
+
+        .lantern {
+            width: 50px;
+            height: 70px;
+            background: #D4202F;
+            border-radius: 0 0 25px 25px;
+            position: relative;
+            animation: swing 3s ease-in-out infinite;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .lantern:before {
+            content: '福';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FFD700;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .lantern:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25px;
+            height: 12px;
+            background: #FFD700;
+            border-radius: 50%;
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .lantern:nth-child(2) { animation-delay: 0.5s; }
+        .lantern:nth-child(3) { animation-delay: 1s; }
+        .lantern:nth-child(4) { animation-delay: 1.5s; }
+
+        /* Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .header h1 {
+            font-family: cursive;
+            font-size: 42px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #FFF4CC;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Back button */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            z-index: 10;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .back-btn:hover,
+        .back-btn:active {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Screen container */
+        .screen {
+            background: white;
+            border-radius: 30px;
+            padding: 35px 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .screen:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #FFD700, #D4202F, #FFD700);
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: scale(0.95); 
+            }
+            to { 
+                opacity: 1; 
+                transform: scale(1); 
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            touch-action: manipulation;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background: #D4202F;
+            color: white;
+            box-shadow: 0 8px 20px rgba(212, 32, 47, 0.3);
+            margin-bottom: 12px;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background: #8B0000;
+            box-shadow: 0 12px 30px rgba(212, 32, 47, 0.4);
+        }
+
+        .btn-secondary {
+            background: #FFD700;
+            color: #8B0000;
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background: #FFA500;
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Input fields */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #8B0000;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #FFE4E1;
+            border-radius: 15px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: white;
+        }
+
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238B0000' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 40px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #D4202F;
+            box-shadow: 0 0 0 3px rgba(212, 32, 47, 0.1);
+        }
+
+        /* Radio buttons */
+        .radio-group {
+            display: flex;
+            gap: 12px;
+            margin: 18px 0;
+        }
+
+        .radio-option {
+            flex: 1;
+            position: relative;
+        }
+
+        .radio-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .radio-option label {
+            display: block;
+            padding: 18px 15px;
+            background: #FFF8DC;
+            border: 2px solid transparent;
+            border-radius: 18px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 700;
+            color: #8B0000;
+        }
+
+        .radio-option input[type="radio"]:checked + label {
+            background: #D4202F;
+            color: white;
+            border-color: #FFD700;
+            transform: scale(1.03);
+        }
+
+        /* Denomination buttons */
+        .denomination-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 18px 0;
+        }
+
+        .denom-btn {
+            padding: 14px 10px;
+            background: #FFF4CC;
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            font-weight: 700;
+            color: #8B0000;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .denom-btn:hover,
+        .denom-btn:active {
+            background: #FFD700;
+            transform: scale(1.05);
+        }
+
+        .denom-btn.selected {
+            background: #D4202F;
+            color: white;
+            border-color: #8B0000;
+        }
+
+        /* Selected denominations list */
+        .selected-list {
+            margin: 18px 0;
+        }
+
+        .selected-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px;
+            background: #FFF8DC;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .selected-item.special-prize {
+            background: #E8F5E9;
+            border: 2px solid #4CAF50;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .selected-item-value {
+            font-weight: 700;
+            color: #8B0000;
+            font-size: 15px;
+            flex: 1;
+        }
+
+        .selected-item-type {
+            font-size: 11px;
+            color: #4CAF50;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: #D4202F;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .quantity-btn:hover,
+        .quantity-btn:active {
+            background: #8B0000;
+            transform: scale(1.1);
+        }
+
+        .quantity-display {
+            min-width: 30px;
+            text-align: center;
+            font-weight: 700;
+            color: #8B0000;
+        }
+
+        /* Total budget */
+        .total-budget {
+            background: linear-gradient(to right, #FFD700, #FFA500);
+            padding: 18px;
+            border-radius: 18px;
+            text-align: center;
+            margin: 18px 0;
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .total-budget-label {
+            font-size: 13px;
+            color: #8B0000;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .total-budget-amount {
+            font-size: 28px;
+            font-weight: 700;
+            color: #8B0000;
+            font-family: serif;
+        }
+
+        /* Custom prize input */
+        .custom-prize-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .custom-prize-input input:first-child {
+            flex: 3;
+        }
+
+        .custom-prize-input input:last-child {
+            flex: 7;
+        }
+
+        /* QR Code section */
+        .qr-section {
+            text-align: center;
+            padding: 25px 0;
+        }
+
+        .qr-code {
+            width: 220px;
+            margin: 18px auto;
+            padding: 15px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(212, 32, 47, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #qrcode {
+            display: inline-block;
+            width: 180px;
+            height: 180px;
+        }
+
+        #qrcode img, #qrcode canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .qr-download-btn {
+            margin-top: 8px;
+            padding: 4px 12px;
+            background: #FFD700;
+            color: #8B0000;
+            border: 1px solid #FFD700;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .qr-download-btn:hover,
+        .qr-download-btn:active {
+            background: #FFA500;
+            border-color: #FFA500;
+        }
+
+        /* Share popup overlay */
+        .share-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fadeIn 0.3s;
+        }
+
+        .share-popup {
+            background: white;
+            border-radius: 25px;
+            padding: 30px 25px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        .share-popup-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .share-popup-header h3 {
+            color: #D4202F;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .share-popup-header .emoji {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .share-message {
+            background: #FFF8DC;
+            padding: 18px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #FFD700;
+        }
+
+        .share-message p {
+            color: #8B0000;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .share-room-code {
+            background: #FFF4CC;
+            padding: 12px;
+            border-radius: 12px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .share-room-code strong {
+            color: #D4202F;
+            font-size: 20px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+        }
+
+        .share-link {
+            background: #E3F2FD;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px 0;
+            word-break: break-all;
+            font-size: 12px;
+            color: #1976D2;
+            text-align: center;
+        }
+
+        .share-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .share-option {
+            background: #F5F5F5;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            padding: 15px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .share-option:hover,
+        .share-option:active {
+            background: #FFF4CC;
+            border-color: #FFD700;
+            transform: scale(1.05);
+        }
+
+        .share-option-icon {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .share-option-label {
+            font-size: 11px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .share-popup-close {
+            width: 100%;
+            padding: 12px;
+            background: #D4202F;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .share-popup-close:hover,
+        .share-popup-close:active {
+            background: #8B0000;
+        }
+
+        .room-code {
+            background: #FFF4CC;
+            padding: 18px;
+            border-radius: 15px;
+            margin: 18px 0;
+        }
+
+        .room-code-label {
+            font-size: 13px;
+            color: #8B0000;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .room-code-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: #D4202F;
+            letter-spacing: 2px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Player list */
+        .player-list {
+            margin: 18px 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .player-item {
+            display: flex;
+            align-items: center;
+            padding: 14px;
+            background: #FFF8DC;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .player-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #D4202F;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        .player-name {
+            flex: 1;
+            font-weight: 600;
+            color: #8B0000;
+        }
+
+        .player-status {
+            background: #FFD700;
+            padding: 5px 14px;
+            border-radius: 18px;
+            font-weight: 700;
+            color: #8B0000;
+            font-size: 13px;
+        }
+
+        .player-status.waiting {
+    background: #4CAF50;
+    color: white;
+}
+        .player-status.playing {
+    background: #4CAF50;
+    color: white;
+}
+        .player-prize {
+            background: #FFD700;
+            padding: 5px 14px;
+            border-radius: 18px;
+            font-weight: 700;
+            color: #8B0000;
+            font-size: 13px;
+        }
+
+        .player-prize.special {
+            background: #4CAF50;
+            color: white;
+        }
+
+        /* Prize inventory */
+        .prize-inventory {
+            margin: 18px 0;
+        }
+
+        .prize-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 14px;
+            background: #FFF8DC;
+            border-radius: 15px;
+            margin-bottom: 8px;
+        }
+
+        .prize-item.special {
+            background: #E8F5E9;
+        }
+
+        .prize-value {
+            font-weight: 700;
+            color: #8B0000;
+            flex: 1;
+        }
+
+        .prize-type-badge {
+            font-size: 10px;
+            background: #4CAF50;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 8px;
+        }
+
+        .prize-count {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .prize-count.claimed {
+            color: #D4202F;
+        }
+
+        /* Shake animation */
+        .envelope-container {
+            text-align: center;
+            padding: 35px 0;
+        }
+
+        .envelope {
+            width: 180px;
+            height: 110px;
+            margin: 0 auto;
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.3s;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .envelope.shaking {
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg) translateX(0); }
+            25% { transform: rotate(-8deg) translateX(-8px); }
+            75% { transform: rotate(8deg) translateX(8px); }
+        }
+
+        .envelope-front {
+            width: 100%;
+            height: 100%;
+            background: #D4202F;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 12px 35px rgba(139, 0, 0, 0.4);
+        }
+
+        .envelope-front:after {
+            content: '福';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 42px;
+            color: #FFD700;
+            font-weight: 700;
+        }
+
+        .shake-instruction {
+            margin-top: 25px;
+            font-size: 16px;
+            color: #FFD700;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Result display */
+        .result-title {
+            font-family: cursive;
+            font-size: 38px;
+            color: #D4202F;
+            margin-bottom: 18px;
+        }
+
+        .result-prize {
+            font-size: 56px;
+            font-weight: 700;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 18px 0;
+            font-family: serif;
+        }
+
+        .result-prize.special {
+            font-size: 32px;
+            color: #4CAF50;
+        }
+
+        /* Loading spinner */
+        .loading {
+            text-align: center;
+            padding: 35px;
+        }
+
+        .spinner {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 18px;
+            border: 4px solid #FFF4CC;
+            border-top: 4px solid #FFD700;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: #8B0000;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        /* Waiting screen */
+        .waiting-screen {
+            text-align: center;
+            padding: 35px 0;
+        }
+
+        .waiting-icon {
+            font-size: 72px;
+            margin: 25px 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-18px); }
+        }
+
+        .waiting-message {
+            font-size: 16px;
+            color: #8B0000;
+            font-weight: 600;
+            margin: 18px 0;
+        }
+
+        /* Status badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #4CAF50;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 28px;
+            font-weight: 700;
+            margin: 18px 0;
+            animation: fadeIn 0.5s;
+        }
+
+        .status-badge:before {
+            content: '✓';
+            font-size: 18px;
+        }
+
+        /* Bank info form */
+        .bank-options {
+            margin: 18px 0;
+        }
+
+        .bank-option {
+            border: 2px solid #FFE4E1;
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .bank-option:hover,
+        .bank-option:active {
+            border-color: #D4202F;
+            background: #FFF8DC;
+        }
+
+        .bank-option.selected {
+            border-color: #D4202F;
+            background: #FFF4CC;
+        }
+
+        .bank-option h3 {
+            color: #8B0000;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .bank-option p {
+            color: #666;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .upload-area {
+            border: 3px dashed #FFD700;
+            border-radius: 18px;
+            padding: 35px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 18px 0;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .upload-area:hover,
+        .upload-area:active {
+            border-color: #D4202F;
+            background: #FFF4CC;
+        }
+
+        .upload-icon {
+            font-size: 44px;
+            margin-bottom: 14px;
+        }
+
+        /* Activity item */
+        .activity-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 14px;
+            background: #FFF8DC;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .activity-time {
+            font-size: 11px;
+            color: #999;
+            margin-right: 12px;
+            white-space: nowrap;
+            min-width: 50px;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-player {
+            font-weight: 700;
+            color: #8B0000;
+            margin-bottom: 4px;
+        }
+
+        .activity-prize {
+            font-size: 13px;
+            color: #D4202F;
+            font-weight: 600;
+        }
+
+        .activity-prize.special {
+            color: #4CAF50;
+        }
+
+        .activity-badge {
+            background: #FFD700;
+            color: #8B0000;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 8px;
+        }
+
+        .activity-badge.new {
+            background: #4CAF50;
+            color: white;
+        }
+
+        /* Tab navigation */
+        .tab-navigation {
+            display: flex;
+            gap: 10px;
+            margin: 18px 0;
+            background: #FFF4CC;
+            border-radius: 15px;
+            padding: 5px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: transparent;
+            border-radius: 12px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #8B0000;
+            cursor: pointer;
+            transition: all 0.3s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .tab-btn.active {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 14px;
+            opacity: 0.5;
+        }
+
+        .empty-state-text {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 34px;
+            }
+
+            .denomination-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .radio-group {
+                flex-direction: column;
+            }
+        }
+
+        /* Hidden class */
+        .hidden {
+            display: none !important;
+        }
+
+        h2 {
+            color: #8B0000;
+            margin-bottom: 22px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        h3 {
+            color: #8B0000;
+            margin: 22px 0 14px;
+            font-size: 16px;
+        }
+    </style>
+    <!-- QRCode.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head><script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {
+  getDatabase,
+  ref,
+  set,
+  get,
+  onValue,
+  update,
+  remove,
+  push
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB83HpHO5PRHkJ8YDLdDAySOmIQVtTtUXk",
+  authDomain: "lac-li-xi-2026-8f32c.firebaseapp.com",
+  databaseURL: "https://lac-li-xi-2026-8f32c-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "lac-li-xi-2026-8f32c",
+  storageBucket: "lac-li-xi-2026-8f32c.firebasestorage.app",
+  messagingSenderId: "230674094866",
+  appId: "1:230674094866:web:d7fc3a0d9d357aba32b1cb"
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+window.firebaseDB = {
+  database,
+  ref,
+  set,
+  get,
+  onValue,
+  update,
+  remove,
+  push
+};
+
+console.log("🔥 FIREBASE READY");
+</script>
+
+<body>
+    <!-- Decorative elements -->
+    <div class="fireworks" id="fireworks"></div>
+    <div class="lanterns">
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🧧 Lắc Lì Xì Tết 2026</h1>
+            <p>Vạn sự như ý - Phát tài phát lộc</p>
+        </div>
+
+        <!-- Screen 1: Home -->
+        <div id="screen-home" class="screen">
+            <h2>Chào mừng bạn đến với trò chơi lì xì!</h2>
+            <button class="btn btn-primary" onclick="navigateTo('create-room')">🎊 TẠO PHÒNG</button>
+            <button class="btn btn-secondary" onclick="navigateTo('join-room')">🎉 THAM GIA PHÒNG</button>
+            
+            <!-- Clear data button -->
+            <div style="text-align: center; margin-top: 30px;">
+                <button onclick="resetApp()" style="background: none; border: none; color: #FFF4CC; font-size: 12px; cursor: pointer; text-decoration: underline; opacity: 0.7;">
+                    🔄 Xóa dữ liệu & làm mới
+                </button>
+            </div>
+        </div>
+
+        <!-- Screen 2: Create Room -->
+        <div id="screen-create-room" class="screen hidden">
+            <button class="back-btn" onclick="goBack()">←</button>
+            <h2>Tạo Phòng Mới</h2>
+            
+            <div class="form-group">
+                <label>👤 Tên chủ phòng</label>
+                <input type="text" id="host-name" placeholder="Nhập tên của bạn">
+            </div>
+
+            <div class="form-group">
+                <label>🎲 Số lượt lắc</label>
+                <input type="number" id="shake-count" placeholder="Nhập số lượt" min="1" value="10">
+            </div>
+
+            <div class="form-group">
+                <label>🎮 Chế độ chơi</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" name="mode" id="mode-online" value="online" checked>
+                        <label for="mode-online">
+                            🌐<br>Online<br>
+                            <small style="font-size: 11px; font-weight: 400;">QR/Mã phòng</small>
+                        </label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="mode" id="mode-local" value="local">
+                        <label for="mode-local">
+                            📱<br>Local<br>
+                            <small style="font-size: 11px; font-weight: 400;">Truyền tay</small>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <h3>💰 Cấu hình phần thưởng tiền</h3>
+            
+            <div class="denomination-grid">
+                <button class="denom-btn" onclick="selectDenom('20K')">20K</button>
+                <button class="denom-btn" onclick="selectDenom('50K')">50K</button>
+                <button class="denom-btn" onclick="selectDenom('100K')">100K</button>
+                <button class="denom-btn" onclick="selectDenom('200K')">200K</button>
+                <button class="denom-btn" onclick="selectDenom('500K')">500K</button>
+                <button class="denom-btn" onclick="addCustomDenom()">➕ Thêm</button>
+            </div>
+
+            <h3>🎁 Phần thưởng khác (không tính ngân sách)</h3>
+            <div id="special-prizes-container"></div>
+            <button class="btn btn-secondary" onclick="addSpecialPrize()" style="font-size: 14px; padding: 12px;">
+                ➕ Thêm phần thưởng khác
+            </button>
+
+            <div id="selected-denoms" class="selected-list"></div>
+
+            <div class="total-budget">
+                <div class="total-budget-label">Tổng ngân sách (chỉ tiền)</div>
+                <div class="total-budget-amount" id="total-budget">0đ</div>
+            </div>
+
+            <button class="btn btn-primary" onclick="createRoom()">🎊 TẠO PHÒNG</button>
+        </div>
+
+        <!-- Screen 3: Join Room -->
+        <div id="screen-join-room" class="screen hidden">
+            <button class="back-btn" onclick="goBack()">←</button>
+            <h2>Tham Gia Phòng</h2>
+            
+            <div class="form-group">
+                <label>🔑 Mã phòng</label>
+                <input type="text" id="join-room-code" placeholder="Nhập mã phòng" style="text-transform: uppercase;">
+            </div>
+
+            <button class="btn btn-primary" onclick="joinRoom()">🎉 THAM GIA</button>
+
+            <div style="text-align: center; margin: 28px 0; padding: 18px; background: #FFF4CC; border-radius: 15px;">
+                <p style="color: #8B0000; font-size: 13px; margin-bottom: 10px;">Hoặc quét mã QR từ chủ phòng</p>
+                <div style="font-size: 44px;">📷</div>
+                <p style="color: #666; font-size: 12px; margin-top: 10px;">Sử dụng ứng dụng camera để quét QR</p>
+            </div>
+        </div>
+
+        <!-- Screen 4: Enter Name -->
+        <div id="screen-enter-name" class="screen hidden">
+            <button class="back-btn" onclick="goBack()">←</button>
+            <h2>Thông tin người chơi</h2>
+            
+            <div class="form-group">
+                <label>👤 Tên của bạn</label>
+                <input type="text" id="player-name" placeholder="Nhập tên của bạn">
+            </div>
+
+            <button class="btn btn-primary" onclick="submitPlayerName()">✅ XÁC NHẬN</button>
+        </div>
+
+        <!-- Screen 5: Welcome -->
+        <div id="screen-welcome" class="screen hidden">
+            <div style="text-align: center; padding: 35px 0;">
+                <div style="font-size: 72px; margin-bottom: 18px;">🎊</div>
+                <h2 style="font-size: 28px; margin-bottom: 14px;">Xin chào,</h2>
+                <h3 id="welcome-name" style="color: #D4202F; font-size: 32px; font-family: cursive; text-align: center; margin: 0;">Người chơi</h3>
+                <p style="color: #666; margin-top: 18px; font-size: 15px;">Chúc bạn may mắn!</p>
+            </div>
+            <button class="btn btn-primary" onclick="navigateTo('waiting')">🎯 TIẾP TỤC</button>
+        </div>
+
+        <!-- Screen 6: Admin Dashboard -->
+        <div id="screen-admin" class="screen hidden">
+            <button class="back-btn" onclick="confirmBackToHome()">←</button>
+            <h2>Bảng điều khiển</h2>
+            
+            <div class="qr-section">
+                <div class="qr-code">
+                    <div id="qrcode"></div>
+                    <button class="qr-download-btn" onclick="downloadQRCode()">💾 Lưu QR</button>
+                </div>
+                <div class="room-code">
+                    <div class="room-code-label">Mã phòng</div>
+                    <div class="room-code-value" id="room-code-display">XXXX</div>
+                </div>
+            </div>
+
+            <h3>👥 Người tham gia (<span id="player-count">0</span>)</h3>
+            <div id="player-list" class="player-list">
+                <div class="empty-state">
+                    <div class="empty-state-icon">👥</div>
+                    <div class="empty-state-text">Chưa có người chơi nào</div>
+                </div>
+            </div>
+
+            <h3>🎁 Kho phần thưởng</h3>
+            <div id="prize-inventory" class="prize-inventory"></div>
+
+            <div style="display: flex; gap: 10px; margin-top: 28px;">
+                <button class="btn btn-primary" onclick="startGame()" style="flex: 1;">🚀 BẮT ĐẦU</button>
+                <button class="btn btn-secondary" onclick="shareRoom()" style="flex: 1;">📤 MỜI BẠN</button>
+            </div>
+        </div>
+
+        <!-- Screen 6.5: Host After Start -->
+        <div id="screen-host-after-start" class="screen hidden">
+            <button class="back-btn" onclick="confirmBackToHome()">←</button>
+            <h2>Phòng đã bắt đầu</h2>
+            
+            <div style="text-align: center; padding: 20px 0;">
+                <div style="font-size: 64px; margin-bottom: 18px;">🎮</div>
+                <p style="color: #8B0000; font-weight: 600; font-size: 16px;">
+                    Trò chơi đang diễn ra
+                </p>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <button class="btn btn-primary" onclick="hostJoinGame()" style="flex: 1;">
+                    🎊 THAM GIA CHƠI
+                </button>
+                <button class="btn btn-secondary" onclick="navigateTo('host-observe', false, true)" style="flex: 1;">
+                    👁️ QUAN SÁT
+                </button>
+            </div>
+
+            <div class="room-code" style="margin-top: 20px;">
+                <div class="room-code-label">Mã phòng</div>
+                <div class="room-code-value" id="room-code-display-2">XXXX</div>
+            </div>
+        </div>
+
+        <!-- Screen 6.6: Host Observe -->
+        <div id="screen-host-observe" class="screen hidden">
+            <button class="back-btn" onclick="confirmBackToHome()">←</button>
+            <h2>Phần Quan Sát</h2>
+
+            <div class="tab-navigation">
+                <button class="tab-btn active" onclick="switchTab('waiting-players')">
+                    ⏳ Đang chờ
+                </button>
+                <button class="tab-btn" onclick="switchTab('recent-winners')">
+                    🎁 Mới trúng
+                </button>
+            </div>
+
+            <!-- Tab: Waiting Players -->
+            <div id="tab-waiting-players" class="tab-content active">
+                <h3>👥 Người chơi đang chờ (<span id="waiting-player-count">0</span>)</h3>
+                <div id="waiting-player-list" class="player-list">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">⏳</div>
+                        <div class="empty-state-text">Chưa có người chơi nào đang chờ</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Recent Winners -->
+            <div id="tab-recent-winners" class="tab-content">
+                <h3>🎊 Người rút lì xì gần nhất</h3>
+                <div id="recent-activity-list" class="player-list">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🎁</div>
+                        <div class="empty-state-text">Chưa có dữ liệu</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 28px;">
+                <button class="btn btn-secondary" onclick="shareRoom()">📤 MỜI THÊM BẠN</button>
+            </div>
+        </div>
+
+        <!-- Screen 7: Waiting Room -->
+        <div id="screen-waiting" class="screen hidden">
+            <div class="waiting-screen">
+                <div class="waiting-icon">⏳</div>
+                <h2>Chờ chủ phòng...</h2>
+                <p class="waiting-message">Tích cực lắc - vận may sẽ đến! 🍀</p>
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 8: Game Started -->
+        <div id="screen-started" class="screen hidden">
+            <div style="text-align: center; padding: 35px 0;">
+                <div style="font-size: 72px; margin-bottom: 18px;">🎉</div>
+                <div class="status-badge">ĐÃ BẮT ĐẦU</div>
+                <h2 style="margin: 18px 0;">Trò chơi đã bắt đầu!</h2>
+                <p style="color: #666; font-size: 15px;">Sẵn sàng nhận lì xì thôi nào!</p>
+            </div>
+            <button class="btn btn-primary" onclick="navigateTo('shake')">🎊 OK, BẮT ĐẦU CHƠI!</button>
+        </div>
+
+        <!-- Screen 9: Shake -->
+        <div id="screen-shake" class="screen hidden">
+            <button class="back-btn" onclick="confirmBackFromShake()">←</button>
+            <h2>Lắc để nhận lì xì!</h2>
+            
+            <div class="envelope-container">
+                <div class="envelope" id="envelope" onclick="startShaking()">
+                    <div class="envelope-front"></div>
+                </div>
+                <p class="shake-instruction" id="shake-text">👆 Chạm vào bao lì xì và lắc điện thoại</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 28px;">
+                <p style="color: #FFD700; font-weight: 600; font-size: 16px;">
+                    Lượt còn lại: <span id="remaining-shakes" style="font-size: 22px; font-weight: 700;">10</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Screen 10: Prize Result -->
+        <div id="screen-result" class="screen hidden">
+            <div style="text-align: center; padding: 18px 0;">
+                <div style="font-size: 88px; margin-bottom: 18px;">🎊</div>
+                <h2 class="result-title">Chúc mừng!</h2>
+                <p style="color: #666; margin-bottom: 18px;">Bạn đã trúng</p>
+                <div class="result-prize" id="prize-amount">100K</div>
+                
+                <div style="background: #FFF4CC; padding: 18px; border-radius: 18px; margin: 28px 0;">
+                    <p style="color: #8B0000; font-weight: 700; margin-bottom: 8px;">
+                        👤 <span id="winner-name">Người chơi</span>
+                    </p>
+                    <p style="color: #8B0000; font-weight: 700;">
+                        🎁 <span id="winner-prize">100K</span>
+                    </p>
+                </div>
+
+                <div id="prize-action-buttons">
+                    <button class="btn btn-primary" onclick="navigateTo('withdraw')">💰 RÚT LÌ XÌ</button>
+                    <button class="btn btn-secondary" onclick="continueShaking()">🔄 TIẾP TỤC CHƠI</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 11: Withdraw Options -->
+        <div id="screen-withdraw" class="screen hidden">
+            <button class="back-btn" onclick="goBack()">←</button>
+            <h2>Rút Lì Xì</h2>
+            
+            <div class="bank-options">
+                <div class="bank-option" id="option-qr" onclick="selectWithdrawOption('qr')">
+                    <h3>📸 Upload QR Code</h3>
+                    <p>Chụp/tải lên mã QR ngân hàng của bạn</p>
+                </div>
+
+                <div class="bank-option" id="option-manual" onclick="selectWithdrawOption('manual')">
+                    <h3>✍️ Nhập thông tin</h3>
+                    <p>Điền thông tin tài khoản ngân hàng</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 12: QR Upload -->
+        <div id="screen-qr-upload" class="screen hidden">
+            <button class="back-btn" onclick="goBack()">←</button>
+            <h2>Upload QR Code</h2>
+            
+            <div class="upload-area" onclick="document.getElementById('qr-file').click()">
+                <input type="file" id="qr-file" accept="image/*" style="display: none;" onchange="previewQR(event)">
+                <div class="upload-icon">📤</div>
+                <p style="color: #8B0000; font-weight: 600;">Chạm để chọn ảnh QR</p>
+                <p style="color: #999; font-size: 13px; margin-top: 8px;">PNG, JPG</p>
+            </div>
+
+            <div id="qr-preview" class="hidden" style="text-align: center; margin: 18px 0;">
+                <img id="qr-preview-img" style="max-width: 100%; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+            </div>
+
+            <button class="btn btn-primary" id="submit-qr-btn" onclick="submitQRCode()" disabled>✅ XÁC NHẬN</button>
+        </div>
+
+        <!-- Screen 13: Manual Bank Info -->
+        <div id="screen-bank-info" class="screen hidden">
+            <button class="back-btn" onclick="goBack()">←</button>
+            <h2>Thông tin ngân hàng</h2>
+            
+            <div class="form-group">
+                <label>🏦 Tên ngân hàng</label>
+                <select id="bank-name">
+                    <option value="">Chọn ngân hàng</option>
+                    <option value="Vietcombank">Vietcombank</option>
+                    <option value="Techcombank">Techcombank</option>
+                    <option value="BIDV">BIDV</option>
+                    <option value="VietinBank">VietinBank</option>
+                    <option value="ACB">ACB</option>
+                    <option value="MB">MB Bank</option>
+                    <option value="VPBank">VPBank</option>
+                    <option value="TPBank">TPBank</option>
+                    <option value="Sacombank">Sacombank</option>
+                    <option value="other">Ngân hàng khác</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>👤 Tên tài khoản</label>
+                <input type="text" id="account-name" placeholder="NGUYEN VAN A">
+            </div>
+
+            <div class="form-group">
+                <label>💳 Số tài khoản</label>
+                <input type="text" id="account-number" placeholder="0123456789">
+            </div>
+
+            <button class="btn btn-primary" onclick="submitBankInfo()">✅ GỬI THÔNG TIN</button>
+        </div>
+
+        <!-- Screen 14: Success -->
+        <div id="screen-success" class="screen hidden">
+            <div style="text-align: center; padding: 35px 0;">
+                <div style="font-size: 88px; margin-bottom: 18px;">✅</div>
+                <h2>Thành công!</h2>
+                <p style="color: #666; font-size: 15px; margin-bottom: 28px;">
+                    Thông tin của bạn đã được gửi đến chủ phòng.<br>
+                    Vui lòng chờ chuyển khoản.
+                </p>
+                <div style="background: #FFF4CC; padding: 18px; border-radius: 18px; margin: 18px 0;">
+                    <p style="color: #8B0000; font-weight: 700; font-size: 16px;">
+                        🎁 Phần thưởng: <span id="final-prize">100K</span>
+                    </p>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="navigateTo('home', true)">🏠 VỀ TRANG CHỦ</button>
+        </div>
+    </div>
+
+    <script>
+// Game state
+let gameState = {
+    mode: 'online',
+    hostName: '',
+    shakeCount: 10,
+    roomCode: '',
+    roomLink: '',
+    denominations: {},
+    specialPrizes: {},
+    denominationsBackup: {},
+    specialPrizesBackup: {},
+    players: [],
+    waitingPlayers: [],
+    winners: [],
+    recentActivity: [],
+    currentPlayer: '',
+    currentPrize: '',
+    currentPrizeType: 'money',
+    isShaking: false,
+    remainingShakes: 10,
+    currentScreen: 'home',
+    isHost: false,
+    gameStarted: false
+};
+
+const STORAGE_KEY = 'tet_lixi_game_state';
+let navigationHistory = ['home'];
+let specialPrizeCounter = 0;
+let playersListenerStarted = false;
+let playersListenerRoom = null;
+// Generate sparks for fireworks
+function createSparks() {
+    const fireworks = document.getElementById('fireworks');
+    for (let i = 0; i < 30; i++) {
+        const spark = document.createElement('div');
+        spark.className = 'spark';
+        spark.style.left = Math.random() * 100 + '%';
+        spark.style.top = Math.random() * 100 + '%';
+        spark.style.animationDelay = Math.random() * 3 + 's';
+        fireworks.appendChild(spark);
+    }
+}
+createSparks();
+
+// Navigation
+window.navigateTo = function (screenId, clearHistory = false, replaceHistory = false) {
+    if (clearHistory) {
+        navigationHistory = [screenId];
+    } else if (replaceHistory) {
+        navigationHistory[navigationHistory.length - 1] = screenId;
+    } else {
+        navigationHistory.push(screenId);
+    }
+
+    gameState.currentScreen = screenId;
+    saveGameState();
+    showScreen(screenId);
+
+    if (replaceHistory) {
+        history.replaceState({ screen: screenId }, '', '#' + screenId);
+    } else {
+        history.pushState({ screen: screenId }, '', '#' + screenId);
+    }
+};
+function goBack() {
+    if (navigationHistory.length > 1) {
+        navigationHistory.pop();
+        const previousScreen = navigationHistory[navigationHistory.length - 1];
+        gameState.currentScreen = previousScreen;
+        saveGameState();
+        showScreen(previousScreen);
+    } else {
+        navigateTo('home', true);
+    }
+}
+
+window.addEventListener('popstate', function(event) {
+    goBack();
+});
+
+// Storage functions
+function saveGameState() {
+    try {
+        gameState.savedTime = Date.now();
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(gameState));
+    } catch (e) {
+        console.error('Error saving:', e);
+    }
+}
+
+function loadGameState() {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            const loaded = JSON.parse(saved);
+            
+            if (!loaded || typeof loaded !== 'object') {
+                clearGameState();
+                return;
+            }
+            
+            const savedTime = loaded.savedTime || 0;
+            const currentTime = Date.now();
+            const twentyFourHours = 24 * 60 * 60 * 1000;
+            
+            if (currentTime - savedTime > twentyFourHours) {
+                clearGameState();
+                return;
+            }
+            
+            Object.assign(gameState, loaded);
+            
+            if (gameState.isHost && gameState.roomCode) {
+    try {
+        // 🔥 CHỈ restore admin khi đang ở admin
+        if (gameState.currentScreen === 'admin') {
+            restoreAdminDashboard();
+        }
+
+        // 👂 Luôn bật listener
+        listenPlayersRealtime();
+
+        // 🧭 Quay lại đúng screen trước khi reload
+        if (gameState.currentScreen) {
+            showScreen(gameState.currentScreen);
+        } else {
+            showScreen('admin');
+        }
+
+    } catch (e) {
+        console.error('Restore host state failed:', e);
+        clearGameState();
+        showScreen('home');
+        return;
+    }
+}
+            if (gameState.denominations && Object.keys(gameState.denominations).length > 0) {
+                try {
+                    updateDenomList();
+                } catch (e) {
+                    console.error('Error updating denom list:', e);
+                }
+            }
+            
+            if (gameState.currentScreen && gameState.currentScreen !== 'home') {
+                const screenElement = document.getElementById('screen-' + gameState.currentScreen);
+                if (screenElement) {
+                    showScreen(gameState.currentScreen);
+                } else {
+                    showScreen('home');
+                }
+            }
+        }
+    } catch (e) {
+        console.error('Error loading:', e);
+        clearGameState();
+        showScreen('home');
+    }
+}
+
+function clearGameState() {
+    try {
+        localStorage.removeItem(STORAGE_KEY);
+    } catch (e) {
+        console.error('Error clearing:', e);
+    }
+}
+
+function resetApp() {
+    if (confirm('Bạn có chắc muốn xóa toàn bộ dữ liệu và làm mới ứng dụng?')) {
+        clearGameState();
+        sessionStorage.clear();
+        window.location.href = window.location.pathname;
+    }
+}
+
+function restoreAdminDashboard() {
+    try {// ✅ restore backup nếu reload
+if (!gameState.denominationsBackup || Object.keys(gameState.denominationsBackup).length === 0) {
+    gameState.denominationsBackup = JSON.parse(JSON.stringify(gameState.denominations));
+}
+
+if (!gameState.specialPrizesBackup || Object.keys(gameState.specialPrizesBackup).length === 0) {
+    gameState.specialPrizesBackup = JSON.parse(JSON.stringify(gameState.specialPrizes));
+}
+        if (!gameState.roomCode || !gameState.roomLink) {
+            throw new Error('Missing room data');
+        }
+        
+        document.getElementById('room-code-display').textContent = gameState.roomCode;
+        document.getElementById('room-code-display-2').textContent = gameState.roomCode;
+        
+        const qrcodeElement = document.getElementById('qrcode');
+        if (!qrcodeElement) {
+            throw new Error('QR code element not found');
+        }
+        
+        qrcodeElement.innerHTML = '';
+        new QRCode(qrcodeElement, {
+            text: gameState.roomLink,
+            width: 180,
+            height: 180,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+        
+        // Convert canvas to img after a short delay
+        setTimeout(() => {
+            convertQRCanvasToImage();
+        }, 100);
+        
+        updatePlayerList();
+        updatePrizeInventory();
+        updateWaitingPlayerList();
+        updateRecentActivityList();
+    } catch (e) {
+        console.error('Error restoring dashboard:', e);
+        throw e;
+    }
+}
+
+// Screen navigation
+function showScreen(screenId) {
+    document.querySelectorAll('.screen').forEach(screen => {
+        screen.classList.add('hidden');
+    });
+    const targetScreen = document.getElementById('screen-' + screenId);
+    if (targetScreen) {
+        targetScreen.classList.remove('hidden');
+    }
+    
+    setTimeout(() => initTouchSupport(), 100);
+}
+
+// Denomination selection
+function selectDenom(value) {
+    if (!gameState.denominations[value]) {
+        gameState.denominations[value] = 1;
+    } else {
+        gameState.denominations[value]++;
+    }
+    updateDenomList();
+}
+
+function addCustomDenom() {
+    const value = prompt('Nhập giá trị (ví dụ: 1000):');
+    if (value && !isNaN(value)) {
+        const key = parseInt(value) >= 1000 ? (parseInt(value) / 1000) + 'K' : value + 'đ';
+        gameState.denominations[key] = 1;
+        updateDenomList();
+    }
+}
+
+// Special prizes management
+function addSpecialPrize() {
+    specialPrizeCounter++;
+    const container = document.getElementById('special-prizes-container');
+    const id = 'special-' + specialPrizeCounter;
+    
+    const prizeDiv = document.createElement('div');
+    prizeDiv.className = 'custom-prize-input';
+    prizeDiv.id = id;
+    prizeDiv.innerHTML = `
+        <input type="text" placeholder="Loại (vd: Hình phạt)" id="${id}-type">
+        <input type="text" placeholder="Nội dung (vd: Uống 1 ly)" id="${id}-content">
+        <input type="number" placeholder="Số lần" value="1" min="1" style="width: 70px;" id="${id}-count">
+        <button onclick="removeSpecialPrize('${id}')" style="background: #D4202F; color: white; border: none; border-radius: 10px; padding: 14px; cursor: pointer; font-size: 16px;">🗑️</button>
+    `;
+    
+    container.appendChild(prizeDiv);
+}
+
+function removeSpecialPrize(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.remove();
+    }
+}
+
+function collectSpecialPrizes() {
+    const container = document.getElementById('special-prizes-container');
+    const inputs = container.querySelectorAll('.custom-prize-input');
+    
+    gameState.specialPrizes = {};
+    
+    inputs.forEach(input => {
+        const id = input.id;
+        const typeInput = document.getElementById(id + '-type');
+        const contentInput = document.getElementById(id + '-content');
+        const countInput = document.getElementById(id + '-count');
+        
+        if (typeInput && contentInput && countInput) {
+            const type = typeInput.value.trim();
+            const content = contentInput.value.trim();
+            const count = parseInt(countInput.value) || 1;
+            
+            if (type && content) {
+                const key = type + ': ' + content;
+                gameState.specialPrizes[key] = count;
+            }
+        }
+    });
+}
+
+function updateQuantity(denom, delta) {
+    gameState.denominations[denom] += delta;
+    if (gameState.denominations[denom] <= 0) {
+        delete gameState.denominations[denom];
+    }
+    updateDenomList();
+}
+
+function updateSpecialQuantity(prize, delta) {
+    gameState.specialPrizes[prize] += delta;
+    if (gameState.specialPrizes[prize] <= 0) {
+        delete gameState.specialPrizes[prize];
+    }
+    updateDenomList();
+}
+
+function updateDenomList() {
+    const container = document.getElementById('selected-denoms');
+    container.innerHTML = '';
+    
+    let total = 0;
+    
+    // Display money prizes
+    for (const [denom, qty] of Object.entries(gameState.denominations)) {
+        const value = parseFloat(denom.replace(/[^0-9.]/g, ''));
+        const multiplier = denom.includes('K') ? 1000 : 1;
+        total += value * multiplier * qty;
+
+        const item = document.createElement('div');
+        item.className = 'selected-item';
+        item.innerHTML = `
+            <div class="selected-item-value">💰 ${denom}</div>
+            <div class="quantity-control">
+                <button class="quantity-btn" onclick="updateQuantity('${denom}', -1)">−</button>
+                <div class="quantity-display">${qty}</div>
+                <button class="quantity-btn" onclick="updateQuantity('${denom}', 1)">+</button>
+            </div>
+        `;
+        container.appendChild(item);
+    }
+    
+    // Display special prizes
+    for (const [prize, qty] of Object.entries(gameState.specialPrizes)) {
+        const item = document.createElement('div');
+        item.className = 'selected-item special-prize';
+        item.innerHTML = `
+            <div style="flex: 1;">
+                <div class="selected-item-type">Phần thưởng khác</div>
+                <div class="selected-item-value">🎁 ${prize}</div>
+            </div>
+            <div class="quantity-control">
+                <button class="quantity-btn" onclick="updateSpecialQuantity('${prize.replace(/'/g, "\\'")}', -1)">−</button>
+                <div class="quantity-display">${qty}</div>
+                <button class="quantity-btn" onclick="updateSpecialQuantity('${prize.replace(/'/g, "\\'")}', 1)">+</button>
+            </div>
+        `;
+        container.appendChild(item);
+    }
+
+    document.getElementById('total-budget').textContent = 
+        total.toLocaleString('vi-VN') + 'đ';
+    
+    saveGameState();
+}
+
+// Create room - FINAL FIX
+async function createRoom() {
+  // ✅ LẤY BUTTON BẰNG querySelector
+  const createBtn = document.querySelector('#screen-create-room .btn-primary');
+  if (createBtn) {
+    createBtn.disabled = true;
+    createBtn.textContent = '⏳ Đang tạo...';
+  }
+
+  const hostName = document.getElementById('host-name').value.trim();
+  const shakeCount = parseInt(document.getElementById('shake-count').value);
+  const mode = document.querySelector('input[name="mode"]:checked').value;
+
+  if (!hostName) {
+    alert('Vui lòng nhập tên chủ phòng!');
+    return;
+  }
+
+  collectSpecialPrizes();
+
+  if (
+    Object.keys(gameState.denominations).length === 0 &&
+    Object.keys(gameState.specialPrizes).length === 0
+  ) {
+    alert('Vui lòng chọn ít nhất một phần thưởng!');
+    return;
+  }
+
+  const roomCode = generateRoomCode();
+
+// ✅ BACKUP ĐÚNG – deep clone
+gameState.denominationsBackup = JSON.parse(JSON.stringify(gameState.denominations));
+gameState.specialPrizesBackup = JSON.parse(JSON.stringify(gameState.specialPrizes));
+
+gameState.hostName = hostName;
+gameState.shakeCount = shakeCount;
+gameState.remainingShakes = shakeCount;
+gameState.mode = mode;
+gameState.roomCode = roomCode;
+gameState.roomLink =
+  location.origin + location.pathname + '?room=' + roomCode;
+gameState.isHost = true;
+gameState.gameStarted = false;
+
+saveGameState();
+  const { database, ref, set } = window.firebaseDB;
+
+  try {
+    await set(ref(database, `rooms/${roomCode}`), {
+      hostName,
+      shakeCount,
+      remainingShakes: shakeCount,
+      mode,
+      denominations: gameState.denominations,
+      specialPrizes: gameState.specialPrizes,
+      gameStarted: false,
+      createdAt: Date.now(),
+      players: {}
+    });
+  } catch (err) {
+    console.error('🔥 Firebase write error:', err);
+    alert('❌ Lỗi ghi Firebase');
+    return;
+  }
+
+  navigateTo('admin');
+
+  document.getElementById('room-code-display').textContent = roomCode;
+  document.getElementById('room-code-display-2').textContent = roomCode;
+
+  const qr = document.getElementById('qrcode');
+  qr.innerHTML = '';
+  new QRCode(qr, {
+    text: gameState.roomLink,
+    width: 180,
+    height: 180
+  });
+
+  listenPlayersRealtime();
+   // ✅ RESET BUTTON (nếu có lỗi)
+  if (createBtn) {
+    createBtn.disabled = false;
+    createBtn.textContent = '🎊 TẠO PHÒNG';
+  }
+}
+function generateRoomCode() {
+    return 'TET' + Math.random().toString(36).substr(2, 6).toUpperCase();
+}
+
+// Download QR code
+function downloadQRCode() {
+    try {
+        const qrcodeElement = document.getElementById('qrcode');
+        
+        if (!qrcodeElement) {
+            alert('❌ Không tìm thấy QR code!');
+            return;
+        }
+        
+        // QRCode.js renders to canvas, try to get canvas first
+        let canvas = qrcodeElement.querySelector('canvas');
+        
+        if (!canvas) {
+            // Fallback: try to get img element
+            const img = qrcodeElement.querySelector('img');
+            if (img) {
+                // Convert img to canvas - use naturalWidth/Height to get original size
+                canvas = document.createElement('canvas');
+                canvas.width = img.naturalWidth || img.width || 180;
+                canvas.height = img.naturalHeight || img.height || 180;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            }
+        }
+        
+        if (!canvas) {
+            alert('❌ QR chưa sẵn sàng! Vui lòng thử lại.');
+            return;
+        }
+        
+        // Convert canvas to data URL (no padding - keep original size)
+        const dataURL = canvas.toDataURL('image/png');
+        
+        // Detect iOS Safari
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        
+        if (isIOS || isSafari) {
+            // For iOS Safari: Open in new tab so user can long-press to save
+            const newTab = window.open();
+            if (newTab) {
+                newTab.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>QR Code - Mã phòng ${gameState.roomCode}</title>
+                        <style>
+                            body {
+                                margin: 0;
+                                padding: 20px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                min-height: 100vh;
+                                background: #f5f5f5;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                            }
+                            img {
+                                max-width: 90%;
+                                height: auto;
+                                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                                border-radius: 10px;
+                                background: white;
+                                padding: 20px;
+                            }
+                            p {
+                                margin-top: 20px;
+                                color: #666;
+                                text-align: center;
+                                font-size: 14px;
+                            }
+                            .code {
+                                font-weight: bold;
+                                color: #D4202F;
+                                font-size: 18px;
+                                margin-top: 10px;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <img src="${dataURL}" alt="QR Code">
+                        <p>Mã phòng: <span class="code">${gameState.roomCode}</span></p>
+                        <p>📱 Nhấn giữ vào ảnh để lưu về điện thoại</p>
+                    </body>
+                    </html>
+                `);
+                newTab.document.close();
+            } else {
+                alert('⚠️ Vui lòng cho phép popup để tải QR!');
+            }
+        } else {
+            // For other browsers: Direct download
+            const link = document.createElement('a');
+            link.download = `QR-LiXi-${gameState.roomCode}.png`;
+            link.href = dataURL;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            alert('✅ Đã tải QR code!');
+        }
+        
+    } catch (error) {
+        console.error('Error downloading QR:', error);
+        alert('❌ Có lỗi khi tải QR! Vui lòng thử lại.');
+    }
+}
+
+// Convert QR canvas to image for better mobile long-press support
+function convertQRCanvasToImage() {
+    try {
+        const qrcodeElement = document.getElementById('qrcode');
+        if (!qrcodeElement) return;
+        
+        const canvas = qrcodeElement.querySelector('canvas');
+        if (!canvas) return;
+        
+        // Get canvas data
+        const dataURL = canvas.toDataURL('image/png');
+        
+        // Create new img element
+        const img = document.createElement('img');
+        img.src = dataURL;
+        img.alt = 'QR Code';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.display = 'block';
+        
+        // Replace canvas with img
+        qrcodeElement.innerHTML = '';
+        qrcodeElement.appendChild(img);
+        
+    } catch (error) {
+        console.error('Error converting QR canvas to image:', error);
+    }
+}
+
+// Join room
+async function joinRoom() {
+  const roomCode = document.getElementById('join-room-code').value
+    .trim()
+    .toUpperCase();
+
+  if (!roomCode) {
+    alert('Vui lòng nhập mã phòng!');
+    return;
+  }
+
+  const joinBtn = document.querySelector('#screen-join-room .btn-primary');
+  if (joinBtn) {
+    joinBtn.disabled = true;
+    joinBtn.textContent = '⏳ Đang kiểm tra...';
+  }
+
+  const { database, ref, get } = window.firebaseDB;
+
+  try {
+    console.log('🔍 Checking room:', roomCode);
+
+    const roomSnap = await get(ref(database, `rooms/${roomCode}`));
+
+    // ❌ PHÒNG KHÔNG TỒN TẠI → CHỈ THOÁT, KHÔNG ĐỌC DATA
+    if (!roomSnap.exists()) {
+      alert('❌ Phòng không tồn tại');
+
+      if (joinBtn) {
+        joinBtn.disabled = false;
+        joinBtn.textContent = '🎉 THAM GIA';
+      }
+      return;
+    }
+
+    // ✅ PHÒNG TỒN TẠI → MỚI ĐƯỢC LOAD DATA
+    const roomData = roomSnap.val();
+
+    // ✅ LOAD PHẦN THƯỞNG TỪ FIREBASE
+    gameState.denominations = roomData.denominations || {};
+    gameState.specialPrizes = roomData.specialPrizes || {};
+
+    // ✅ BACKUP ĐỂ INVENTORY + DRAW ĐÚNG
+    gameState.denominationsBackup = JSON.parse(JSON.stringify(gameState.denominations));
+    gameState.specialPrizesBackup = JSON.parse(JSON.stringify(gameState.specialPrizes));
+
+    gameState.roomCode = roomCode;
+    gameState.isHost = false;
+
+    saveGameState();
+    navigateTo('enter-name');
+
+  } catch (err) {
+    console.error('🔥 Firebase error:', err);
+    alert('❌ Lỗi kiểm tra phòng: ' + err.message);
+
+    if (joinBtn) {
+      joinBtn.disabled = false;
+      joinBtn.textContent = '🎉 THAM GIA';
+    }
+  }
+}
+async function submitPlayerName() {
+  const playerName = document.getElementById('player-name').value.trim();
+  
+  if (!playerName) {
+    alert('Vui lòng nhập tên của bạn!');
+    return;
+  }
+
+  // ✅ LẤY BUTTON BẰNG querySelector
+  const submitBtn = document.querySelector('#screen-enter-name .btn-primary');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = '⏳ Đang tham gia...';
+  }
+
+  const { database, ref, push, set } = window.firebaseDB;
+
+  gameState.currentPlayer = playerName;
+  saveGameState();
+
+  try {
+    console.log('👤 Adding player:', playerName);
+    
+    const playerRef = push(ref(database, `rooms/${gameState.roomCode}/players`));
+
+    const playerData = {
+      name: playerName,
+      joinedAt: Date.now(),
+      status: 'waiting'
+    };
+
+    await set(playerRef, playerData);
+    
+    console.log('✅ Player added successfully');
+    
+    listenPlayersRealtime();
+
+    navigateTo('welcome');
+    document.getElementById('welcome-name').textContent = playerName;
+
+  } catch (err) {
+    console.error('🔥 Firebase error:', err);
+    alert('❌ Lỗi tham gia phòng: ' + err.message);
+    
+    // ✅ RESET BUTTON
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = '✅ XÁC NHẬN';
+    }
+  }
+}
+// Start game
+async function startGame() {
+  if (!gameState.roomCode) return;
+
+  const { database, ref, update } = window.firebaseDB;
+
+  try {
+    await update(ref(database, `rooms/${gameState.roomCode}`), {
+      gameStarted: true,
+      startedAt: Date.now()
+    });
+
+    gameState.gameStarted = true;
+    saveGameState();
+
+    navigateTo('host-after-start', true);
+  } catch (e) {
+    console.error('Start game error:', e);
+    alert('❌ Không thể bắt đầu game');
+  }
+}
+// Host join game
+function hostJoinGame() {
+    gameState.currentPlayer = gameState.hostName;
+    navigateTo('shake');
+    document.getElementById('remaining-shakes').textContent = gameState.remainingShakes;
+}
+
+// Tab switching
+function switchTab(tabName) {
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    event.target.classList.add('active');
+    document.getElementById('tab-' + tabName).classList.add('active');
+}
+
+// Update waiting player list
+function updatePlayerList() {
+    const container = document.getElementById('player-list');
+    const countEl = document.getElementById('player-count');
+
+    if (!container || !countEl) {
+        console.warn('❌ player-list hoặc player-count không tồn tại');
+        return;
+    }
+
+    container.innerHTML = '';
+
+    if (!gameState.players || gameState.players.length === 0) {
+        container.innerHTML = `
+            <div class="empty-state">
+                <div class="empty-state-icon">👥</div>
+                <div class="empty-state-text">Chưa có người chơi nào</div>
+            </div>
+        `;
+        countEl.textContent = '0';
+        return;
+    }
+
+    gameState.players.forEach(player => {
+        const item = document.createElement('div');
+        item.className = 'player-item';
+
+        const statusClass = player.status === 'claimed' ? '' : 'waiting';
+        const statusText = player.status === 'claimed' ? 'Đã nhận' : 'Đang chờ';
+
+        item.innerHTML = `
+            <div class="player-avatar">
+                ${player.name.charAt(0).toUpperCase()}
+            </div>
+            <div class="player-name">${player.name}</div>
+            <div class="player-status ${statusClass}">
+                ${statusText}
+            </div>
+        `;
+
+        container.appendChild(item);
+    });
+
+    countEl.textContent = gameState.players.length.toString();
+}
+function updateWaitingPlayerList() {
+    const container = document.getElementById('waiting-player-list');
+    container.innerHTML = '';
+
+    const playingPlayers = gameState.players.filter(p => p.status === 'waiting');
+
+    if (playingPlayers.length === 0) {
+        container.innerHTML = `
+            <div class="empty-state">
+                <div class="empty-state-icon">🎮</div>
+                <div class="empty-state-text">Không có người đang chơi</div>
+            </div>
+        `;
+        document.getElementById('waiting-player-count').textContent = '0';
+        return;
+    }
+
+    playingPlayers.forEach(player => {
+        const item = document.createElement('div');
+        item.className = 'player-item';
+
+        item.innerHTML = `
+            <div class="player-avatar">${player.name.charAt(0).toUpperCase()}</div>
+            <div class="player-name">${player.name}</div>
+            <div class="player-status playing">Đang chơi</div>
+        `;
+
+        container.appendChild(item);
+    });
+
+    document.getElementById('waiting-player-count').textContent =
+        playingPlayers.length;
+}
+// Update recent activity list
+function updateRecentActivityList() {
+    const container = document.getElementById('recent-activity-list');
+    container.innerHTML = '';
+
+    if (!gameState.recentActivity || gameState.recentActivity.length === 0) {
+        container.innerHTML = `
+            <div class="empty-state">
+                <div class="empty-state-icon">🎁</div>
+                <div class="empty-state-text">Chưa có ai rút lì xì</div>
+            </div>
+        `;
+        return;
+    }
+
+    gameState.recentActivity.slice(0, 10).forEach(activity => {
+        const item = document.createElement('div');
+        item.className = 'activity-item';
+
+        const time = new Date(activity.timestamp).toLocaleTimeString('vi-VN', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+
+        const isSpecial = activity.prizeType === 'special';
+
+        item.innerHTML = `
+            <div class="activity-time">${time}</div>
+            <div class="activity-content">
+                <div class="activity-player">
+                    👤 ${activity.name}
+                    <span class="activity-badge new">MỚI</span>
+                </div>
+                <div class="activity-prize ${isSpecial ? 'special' : ''}">
+                    ${isSpecial ? '🎁' : '💰'} ${activity.prize}
+                </div>
+            </div>
+        `;
+
+        container.appendChild(item);
+    });
+}
+// Shake functionality
+let shakeTimeout;
+let shakeStartTime;
+
+function startShaking() {
+    if (gameState.isShaking) return;
+    
+    gameState.isShaking = true;
+    shakeStartTime = Date.now();
+    const envelope = document.getElementById('envelope');
+    envelope.classList.add('shaking');
+    document.getElementById('shake-text').textContent = '🎊 Đang lắc...';
+
+    if (typeof DeviceMotionEvent !== 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function') {
+        DeviceMotionEvent.requestPermission()
+            .then(permissionState => {
+                if (permissionState === 'granted') {
+                    window.addEventListener('devicemotion', handleShake);
+                } else {
+                    shakeTimeout = setTimeout(() => {
+                        stopShaking();
+                    }, 3000);
+                }
+            })
+            .catch(console.error);
+    } else if (window.DeviceMotionEvent) {
+        window.addEventListener('devicemotion', handleShake);
+    } else {
+        shakeTimeout = setTimeout(() => {
+            stopShaking();
+        }, 3000);
+    }
+
+    shakeTimeout = setTimeout(() => {
+        stopShaking();
+    }, 5000);
+}
+
+function handleShake(event) {
+    const acceleration = event.accelerationIncludingGravity;
+    if (!acceleration) return;
+    
+    const threshold = 12;
+    
+    const totalAcceleration = Math.sqrt(
+        Math.pow(acceleration.x || 0, 2) +
+        Math.pow(acceleration.y || 0, 2) +
+        Math.pow(acceleration.z || 0, 2)
+    );
+    
+    if (totalAcceleration > threshold) {
+        if (gameState.isShaking && Date.now() - shakeStartTime > 500) {
+            clearTimeout(shakeTimeout);
+            setTimeout(() => stopShaking(), 500);
+        }
+    }
+}
+
+function stopShaking() {
+    gameState.isShaking = false;
+    const envelope = document.getElementById('envelope');
+    envelope.classList.remove('shaking');
+    window.removeEventListener('devicemotion', handleShake);
+    clearTimeout(shakeTimeout);
+
+    drawPrize();
+}
+
+async function drawPrize() {
+    console.log('🎲 Drawing prize...');
+
+    // ✅ CHECK HẾT THƯỞNG – ĐẶT Ở ĐẦU HÀM
+    if (
+        Object.keys(gameState.denominations).length === 0 &&
+        Object.keys(gameState.specialPrizes).length === 0
+    ) {
+        alert('Hết phần thưởng!');
+        navigateTo('home', true);
+        return;
+    }
+
+    const prizePool = [];
+
+    // 💰 MONEY PRIZES
+    for (const [denom, qty] of Object.entries(gameState.denominations)) {
+        for (let i = 0; i < qty; i++) {
+            prizePool.push({ prize: denom, prizeType: 'money' });
+        }
+    }
+
+    // 🎁 SPECIAL PRIZES
+    for (const [prize, qty] of Object.entries(gameState.specialPrizes)) {
+        for (let i = 0; i < qty; i++) {
+            prizePool.push({ prize, prizeType: 'special' });
+        }
+    }
+
+    // ❗ fallback an toàn (hiếm khi xảy ra)
+    if (prizePool.length === 0) {
+        alert('Hết phần thưởng!');
+        navigateTo('home', true);
+        return;
+    }
+
+    // 🎲 RANDOM
+    const randomIndex = Math.floor(Math.random() * prizePool.length);
+    const { prize: randomPrize, prizeType } = prizePool[randomIndex];
+
+    gameState.currentPrize = randomPrize;
+    gameState.currentPrizeType = prizeType;
+
+    // ✅ GIẢM SỐ LƯỢNG THẬT
+    if (prizeType === 'money') {
+        gameState.denominations[randomPrize]--;
+        if (gameState.denominations[randomPrize] <= 0) {
+            delete gameState.denominations[randomPrize];
+        }
+    } else {
+        gameState.specialPrizes[randomPrize]--;
+        if (gameState.specialPrizes[randomPrize] <= 0) {
+            delete gameState.specialPrizes[randomPrize];
+        }
+    }
+
+    // ✅ UPDATE SAU KHI GIẢM
+    updatePrizeInventory();
+    gameState.remainingShakes--;
+
+    // 📝 RECENT ACTIVITY (LOCAL)
+    gameState.recentActivity.unshift({
+        name: gameState.currentPlayer,
+        prize: randomPrize,
+        prizeType,
+        timestamp: Date.now()
+    });
+
+    saveGameState();
+    updateRecentActivityList();
+    updateWaitingPlayerList();
+    const { database, ref, push } = window.firebaseDB;
+
+await push(
+  ref(database, `rooms/${gameState.roomCode}/recentActivity`),
+  {
+    name: gameState.currentPlayer,
+    prize: randomPrize,
+    prizeType,
+    timestamp: Date.now()
+  }
+);
+
+    // 🔥 UPDATE FIREBASE PLAYER
+    await updatePlayerInFirebase(gameState.currentPlayer, {
+        status: 'claimed',
+        prize: randomPrize,
+        prizeType,
+        claimedAt: Date.now()
+    });
+
+    // 🎉 HIỂN THỊ KẾT QUẢ
+    document.getElementById('prize-amount').textContent = randomPrize;
+    document.getElementById('winner-name').textContent = gameState.currentPlayer;
+    document.getElementById('winner-prize').textContent = randomPrize;
+
+    const actionButtons = document.getElementById('prize-action-buttons');
+    actionButtons.innerHTML =
+        prizeType === 'money'
+            ? `
+                <button class="btn btn-primary" onclick="navigateTo('withdraw')">💰 RÚT LÌ XÌ</button>
+                <button class="btn btn-secondary" onclick="continueShaking()">🔄 TIẾP TỤC CHƠI</button>
+              `
+            : `
+                <button class="btn btn-primary" onclick="continueShaking()">🎊 TIẾP TỤC CHƠI</button>
+              `;
+
+    navigateTo('result');
+}
+
+
+// Continue shaking
+function continueShaking() {
+    if (gameState.remainingShakes > 0) {
+        navigateTo('shake');
+        document.getElementById('remaining-shakes').textContent = gameState.remainingShakes;
+    } else {
+        alert('Đã hết lượt lắc!');
+        if (gameState.isHost) {
+            navigateTo('host-observe');
+        } else {
+            navigateTo('home', true);
+        }
+    }
+}
+
+// Select withdraw option
+let selectedWithdrawOption = '';
+function selectWithdrawOption(option) {
+    selectedWithdrawOption = option;
+    document.querySelectorAll('.bank-option').forEach(opt => {
+        opt.classList.remove('selected');
+    });
+    document.getElementById('option-' + option).classList.add('selected');
+    
+    if (option === 'qr') {
+        navigateTo('qr-upload');
+    } else {
+        navigateTo('bank-info');
+    }
+}
+
+// QR preview
+function previewQR(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('qr-preview-img').src = e.target.result;
+            document.getElementById('qr-preview').classList.remove('hidden');
+            document.getElementById('submit-qr-btn').disabled = false;
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+// Submit QR code
+function submitQRCode() {
+    console.log('Submitting QR code for player:', gameState.currentPlayer);
+    console.log('Prize:', gameState.currentPrize);
+    
+    document.getElementById('final-prize').textContent = gameState.currentPrize;
+    navigateTo('success');
+}
+
+// Submit bank info
+function submitBankInfo() {
+    const bankName = document.getElementById('bank-name').value;
+    const accountName = document.getElementById('account-name').value;
+    const accountNumber = document.getElementById('account-number').value;
+
+    if (!bankName || !accountName || !accountNumber) {
+        alert('Vui lòng điền đầy đủ thông tin!');
+        return;
+    }
+
+    console.log('Bank info:', {
+        player: gameState.currentPlayer,
+        prize: gameState.currentPrize,
+        bank: bankName,
+        accountName: accountName,
+        accountNumber: accountNumber
+    });
+
+    document.getElementById('final-prize').textContent = gameState.currentPrize;
+    navigateTo('success');
+}
+
+// Update player list
+function listenPlayersRealtime() {
+  if (
+    playersListenerStarted &&
+    playersListenerRoom === gameState.roomCode
+  ) return;
+
+  playersListenerStarted = true;
+  playersListenerRoom = gameState.roomCode;
+
+  const { database, ref, onValue } = window.firebaseDB;
+
+  // 👥 LIST PLAYER
+  onValue(ref(database, `rooms/${gameState.roomCode}/players`), (snapshot) => {
+    const data = snapshot.val();
+    gameState.players = data ? Object.values(data) : [];
+    updatePlayerList();
+    updateWaitingPlayerList();
+  });
+
+  // 🎮 LIST GAME START (chỉ player)
+  onValue(ref(database, `rooms/${gameState.roomCode}/gameStarted`), (snapshot) => {
+    const started = snapshot.val();
+    if (started && !gameState.isHost) {
+      gameState.gameStarted = true;
+      saveGameState();
+      navigateTo('started', true);
+    }
+  });
+  // 🎁 LIST RECENT ACTIVITY – HOST / OBSERVE REALTIME
+  onValue(
+    ref(database, `rooms/${gameState.roomCode}/recentActivity`),
+    (snapshot) => {
+      const data = snapshot.val();
+
+      if (!data) {
+        gameState.recentActivity = [];
+      } else {
+        gameState.recentActivity = Object.values(data)
+          .sort((a, b) => b.timestamp - a.timestamp);
+      }
+
+      updateRecentActivityList();
+    }
+  );
+}
+async function updatePlayerInFirebase(playerName, data) {
+  const { database, ref, get, update } = window.firebaseDB;
+
+  const playersRef = ref(database, `rooms/${gameState.roomCode}/players`);
+  const snap = await get(playersRef);
+  if (!snap.exists()) return;
+
+  const players = snap.val();
+
+  for (const key in players) {
+    if (players[key].name === playerName) {
+      await update(ref(database, `rooms/${gameState.roomCode}/players/${key}`), data);
+      break;
+    }
+  }
+}
+
+// Update prize inventory
+function updatePrizeInventory() {
+    const container = document.getElementById('prize-inventory');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    // ✅ đảm bảo backup luôn tồn tại
+    if (!gameState.denominationsBackup || Object.keys(gameState.denominationsBackup).length === 0) {
+        gameState.denominationsBackup = JSON.parse(JSON.stringify(gameState.denominations));
+    }
+
+    if (!gameState.specialPrizesBackup || Object.keys(gameState.specialPrizesBackup).length === 0) {
+        gameState.specialPrizesBackup = JSON.parse(JSON.stringify(gameState.specialPrizes));
+    }
+    
+    // Display money prizes
+    for (const [denom, qty] of Object.entries(gameState.denominations)) {
+        const total = gameState.denominationsBackup[denom] || qty;
+        const claimed = total - qty;
+        
+        const item = document.createElement('div');
+        item.className = 'prize-item';
+        item.innerHTML = `
+            <div class="prize-value">💰 ${denom}</div>
+            <div class="prize-count ${claimed > 0 ? 'claimed' : ''}">${claimed} / ${total}</div>
+        `;
+        container.appendChild(item);
+    }
+    
+    // Display special prizes
+    for (const [prize, qty] of Object.entries(gameState.specialPrizes)) {
+        const total = gameState.specialPrizesBackup[prize] || qty;
+        const claimed = total - qty;
+        
+        const item = document.createElement('div');
+        item.className = 'prize-item special';
+        item.innerHTML = `
+            <div class="prize-value">
+                🎁 ${prize}
+                <span class="prize-type-badge">Khác</span>
+            </div>
+            <div class="prize-count ${claimed > 0 ? 'claimed' : ''}">${claimed} / ${total}</div>
+        `;
+        container.appendChild(item);
+    }
+}
+
+// Share room
+function shareRoom() {
+    const shareTitle = 'Lắc Lì Xì Tết 2026';
+    const shareText = `Mời bạn tham gia phòng lì xì ${gameState.roomCode}`;
+    const shareUrl = gameState.roomLink;
+    
+    console.log('=== DEBUG SHARE ===');
+    console.log('navigator.share available:', !!navigator.share);
+    console.log('navigator.canShare available:', !!navigator.canShare);
+    console.log('Share data:', { title: shareTitle, text: shareText, url: shareUrl });
+    console.log('Protocol:', window.location.protocol);
+    
+    // Kiểm tra hỗ trợ Web Share API
+    if (navigator.share) {
+        const shareData = {
+            title: shareTitle,
+            text: shareText,
+            url: shareUrl
+        };
+        
+        // Kiểm tra xem data có thể share được không
+        if (navigator.canShare && !navigator.canShare(shareData)) {
+            console.log('⚠️ Data không thể share, dùng fallback');
+            fallbackShare(shareTitle, shareText, shareUrl);
+            return;
+        }
+        
+        console.log('Attempting navigator.share()...');
+        
+        // Sử dụng native share sheet của hệ điều hành
+        navigator.share(shareData)
+        .then(() => {
+            console.log('✅ Chia sẻ thành công');
+        })
+        .catch(err => {
+            console.log('❌ Lỗi chia sẻ:', err.name, err.message, err);
+            // Chỉ fallback nếu KHÔNG phải user cancel
+            if (err.name !== 'AbortError') {
+                fallbackShare(shareTitle, shareText, shareUrl);
+            }
+        });
+    } else {
+        console.log('⚠️ navigator.share không khả dụng, dùng fallback');
+        // Fallback cho trình duyệt không hỗ trợ
+        fallbackShare(shareTitle, shareText, shareUrl);
+    }
+}
+
+function fallbackShare(title, text, url) {
+    const fullText = `${title}\n\n${text}\n${url}`;
+    
+    // Thử copy vào clipboard
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(fullText)
+            .then(() => {
+                showToast('✅ Đã sao chép link chia sẻ!');
+            })
+            .catch(() => {
+                // Fallback cuối cùng: textarea method
+                fallbackCopyTextArea(fullText);
+            });
+    } else {
+        // Dùng textarea method cho các trình duyệt cũ
+        fallbackCopyTextArea(fullText);
+    }
+}
+
+function fallbackCopyTextArea(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            showToast('✅ Đã sao chép link chia sẻ!');
+        } else {
+            showToast('⚠️ Không thể sao chép. Vui lòng thử lại.');
+        }
+    } catch (err) {
+        console.error('Fallback copy failed:', err);
+        showToast('⚠️ Không thể sao chép. Vui lòng thử lại.');
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+function showToast(message) {
+    // Tạo toast notification đơn giản
+    const toast = document.createElement('div');
+    toast.textContent = message;
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        z-index: 10000;
+        animation: fadeInOut 2.5s ease-in-out;
+    `;
+    
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        document.body.removeChild(toast);
+    }, 2500);
+}
+
+// Confirm back actions
+function confirmBackToHome() {
+    if (confirm('Bạn có chắc muốn thoát? Phòng sẽ được lưu lại.')) {
+        navigateTo('home', true);
+    }
+}
+
+function confirmBackFromShake() {
+    if (confirm('Bạn có chắc muốn quay lại?')) {
+        goBack();
+    }
+}
+
+// Touch support
+function initTouchSupport() {
+    try {
+        const selectors = ['.btn', '.denom-btn', '.quantity-btn', '.back-btn', '.bank-option', '.upload-area', '.envelope', '.tab-btn'];
+        
+        selectors.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                if (element) {
+                    element.style.cursor = 'pointer';
+                    element.addEventListener('touchstart', function(e) {
+                        // Touch support for iOS
+                    }, { passive: true });
+                }
+            });
+        });
+
+        document.querySelectorAll('.radio-option label').forEach(label => {
+            if (label) {
+                label.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    const radio = this.previousElementSibling;
+                    if (radio && radio.type === 'radio') {
+                        radio.checked = true;
+                        radio.dispatchEvent(new Event('change'));
+                    }
+                });
+            }
+        });
+    } catch (e) {
+        console.error('Error in initTouchSupport:', e);
+    }
+}
+
+// Initialize
+window.addEventListener('load', function() {
+    console.log('App loading...');
+    
+    try {
+        loadGameState();
+
+        // ✅ HOST reload → quay lại admin + listen
+        if (gameState.isHost && gameState.roomCode) {
+          navigateTo('admin', true);
+          listenPlayersRealtime();
+        }
+
+        // ✅ PLAYER reload → chỉ listen
+        if (!gameState.isHost && gameState.roomCode && gameState.currentPlayer) {
+          listenPlayersRealtime();
+        }
+
+    } catch (e) {
+        console.error('Failed to load game state:', e);
+        showScreen('home');
+    }
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const roomCode = urlParams.get('room');
+    if (roomCode) {
+        console.log('Room code from URL:', roomCode);
+        document.getElementById('join-room-code').value = roomCode;
+        navigateTo('enter-name');
+    } else {
+        if (!gameState.currentScreen || gameState.currentScreen === 'home') {
+            showScreen('home');
+        }
+    }
+
+    setTimeout(initTouchSupport, 100);
+    
+    console.log('App loaded successfully');
+});
+    </script>
+</body>
+</html>
